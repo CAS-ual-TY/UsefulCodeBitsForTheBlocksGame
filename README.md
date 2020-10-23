@@ -1,6 +1,7 @@
 
 # UsefulCodeBitsForTheBlocksGame
- Useful Code for Minceraft Mods (yes, the typo was on purpose)
+ Useful Code for Minceraft Mods (yes, the typo was on purpose).  
+ The repo is still in its default forge-gradle form.
 ## Conditions for Use
 Anyone may use this code as they like as long as they do the following:
 - Give credit to the repo
