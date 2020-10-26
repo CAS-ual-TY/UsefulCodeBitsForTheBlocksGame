@@ -1,4 +1,4 @@
-package com.example.examplemod.client;
+package com.example.examplemod.client.screen;
 
 import org.lwjgl.opengl.GL11;
 
