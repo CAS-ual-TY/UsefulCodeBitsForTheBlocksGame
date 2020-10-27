@@ -189,10 +189,10 @@ public class BlitUtil
      * @param renderHeight
      * @param maskBinderAndDrawer Runnable which binds and draws the mask
      * @param textureBinderAndDrawer Runnable which binds and draws the texture
-     * @see #fullBlitMasked(MatrixStack, int, int, int, int, ResourceLocation, ResourceLocation)
-     * @see #advancedBlit(MatrixStack, int, int, int, int, int, int, int, int, int, int)
+     * @see #fullBlit(MatrixStack, int, int, int, int)
+     * @see #advancedMaskedBlit(MatrixStack, int, int, int, int, Runnable, Runnable)
      */
-    public static void fullBlitMasked(MatrixStack ms, int renderX, int renderY, int renderWidth, int renderHeight, ResourceLocation mask, ResourceLocation texture)
+    public static void fullMaskedBlit(MatrixStack ms, int renderX, int renderY, int renderWidth, int renderHeight, ResourceLocation mask, ResourceLocation texture)
     {
         Minecraft mc = Minecraft.getInstance();
         
@@ -208,12 +208,12 @@ public class BlitUtil
             BlitUtil.fullBlit(ms, renderX, renderY, renderWidth, renderHeight);
         };
         
-        BlitUtil.fullBlitMasked(ms, renderX, renderY, renderWidth, renderHeight, maskBinderAndDrawer, textureBinderAndDrawer);
+        BlitUtil.advancedMaskedBlit(ms, renderX, renderY, renderWidth, renderHeight, maskBinderAndDrawer, textureBinderAndDrawer);
     }
     
     /**
-     * <p>Draws an entire texture with a mask at the given coordinates. The mask's alpha overrides the texture's alpha (thus the texture's alpha and the mask's color is ignored).<p>
-     * <p>Allows you to use custom texture binder and draw methods, instead of the default Minecraft methods.</p>
+     * <p>Draws a texture with a mask at the given coordinates. The mask's alpha overrides the texture's alpha (thus the texture's alpha and the mask's color is ignored).<p>
+     * <p>Allows you to use custom texture binder and draw methods (and parameters), instead of the default Minecraft methods.</p>
      * @param ms
      * @param renderX
      * @param renderY
@@ -221,10 +221,10 @@ public class BlitUtil
      * @param renderHeight
      * @param maskBinderAndDrawer Runnable which binds and draws the mask
      * @param textureBinderAndDrawer Runnable which binds and draws the texture
-     * @see #fullBlitMasked(MatrixStack, int, int, int, int, ResourceLocation, ResourceLocation)
+     * @see #fullMaskedBlit(MatrixStack, int, int, int, int, ResourceLocation, ResourceLocation)
      * @see #advancedBlit(MatrixStack, int, int, int, int, int, int, int, int, int, int)
      */
-    public static void fullBlitMasked(MatrixStack ms, int renderX, int renderY, int renderWidth, int renderHeight, Runnable maskBinderAndDrawer, Runnable textureBinderAndDrawer)
+    public static void advancedMaskedBlit(MatrixStack ms, int renderX, int renderY, int renderWidth, int renderHeight, Runnable maskBinderAndDrawer, Runnable textureBinderAndDrawer)
     {
         RenderSystem.pushMatrix();
         RenderSystem.color4f(1F, 1F, 1F, 1F);
