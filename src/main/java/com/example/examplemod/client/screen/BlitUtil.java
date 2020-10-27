@@ -223,6 +223,7 @@ public class BlitUtil
      * @param textureBinderAndDrawer Runnable which binds and draws the texture
      * @see #fullMaskedBlit(MatrixStack, int, int, int, int, ResourceLocation, ResourceLocation)
      * @see #advancedBlit(MatrixStack, int, int, int, int, int, int, int, int, int, int)
+     * @see <a target="_blank" href="https://stackoverflow.com/questions/5097145/opengl-mask-with-multiple-textures">https://stackoverflow.com/questions/5097145/opengl-mask-with-multiple-textures</a>
      */
     public static void advancedMaskedBlit(MatrixStack ms, int renderX, int renderY, int renderWidth, int renderHeight, Runnable maskBinderAndDrawer, Runnable textureBinderAndDrawer)
     {
