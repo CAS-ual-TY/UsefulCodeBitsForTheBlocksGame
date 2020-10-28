@@ -208,7 +208,7 @@ public class BlitUtil
             BlitUtil.fullBlit(ms, renderX, renderY, renderWidth, renderHeight);
         };
         
-        BlitUtil.advancedMaskedBlit(ms, renderX, renderY, renderWidth, renderHeight, maskBinderAndDrawer, textureBinderAndDrawer);
+        BlitUtil.advancedMaskedBlit(ms, maskBinderAndDrawer, textureBinderAndDrawer);
     }
     
     /**
@@ -225,7 +225,7 @@ public class BlitUtil
      * @see #advancedBlit(MatrixStack, int, int, int, int, int, int, int, int, int, int)
      * @see <a target="_blank" href="https://stackoverflow.com/questions/5097145/opengl-mask-with-multiple-textures">https://stackoverflow.com/questions/5097145/opengl-mask-with-multiple-textures</a>
      */
-    public static void advancedMaskedBlit(MatrixStack ms, int renderX, int renderY, int renderWidth, int renderHeight, Runnable maskBinderAndDrawer, Runnable textureBinderAndDrawer)
+    public static void advancedMaskedBlit(MatrixStack ms, Runnable maskBinderAndDrawer, Runnable textureBinderAndDrawer)
     {
         RenderSystem.pushMatrix();
         RenderSystem.color4f(1F, 1F, 1F, 1F);
