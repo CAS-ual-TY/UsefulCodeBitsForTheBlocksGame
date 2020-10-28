@@ -215,10 +215,6 @@ public class BlitUtil
      * <p>Draws a texture with a mask at the given coordinates. The mask's alpha overrides the texture's alpha (thus the texture's alpha and the mask's color is ignored).<p>
      * <p>Allows you to use custom texture binder and draw methods (and parameters), instead of the default Minecraft methods.</p>
      * @param ms
-     * @param renderX
-     * @param renderY
-     * @param renderWidth
-     * @param renderHeight
      * @param maskBinderAndDrawer Runnable which binds and draws the mask
      * @param textureBinderAndDrawer Runnable which binds and draws the texture
      * @see #fullMaskedBlit(MatrixStack, int, int, int, int, ResourceLocation, ResourceLocation)
