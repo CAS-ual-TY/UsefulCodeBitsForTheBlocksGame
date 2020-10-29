@@ -27,8 +27,13 @@ public abstract class SwitchableContainerScreen<T extends Container> extends Con
     {
         if(this.isClosedByPlayer)
         {
-            super.onClose();
+            this.onGuiClose();
         }
+    }
+    
+    protected void onGuiClose()
+    {
+        super.onClose();
     }
     
     /**
